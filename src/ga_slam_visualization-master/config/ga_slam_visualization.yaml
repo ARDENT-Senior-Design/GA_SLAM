@@ -1,0 +1,7 @@
+grid_map_topic: /ga_slam_visualization/raw_map
+grid_map_visualizations:
+  - name: elevation_points
+    type: point_cloud
+    params:
+     layer: meanZ
+

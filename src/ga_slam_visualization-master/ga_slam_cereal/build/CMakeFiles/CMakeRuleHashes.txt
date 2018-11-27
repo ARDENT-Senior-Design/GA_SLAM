@@ -1,0 +1,10 @@
+# Hashes of file build rules.
+7553e4449f84d213d74a77dbf5171c10 CMakeFiles/cereal
+83fac2b7f5094a5c2eaab38966d7d7a4 CMakeFiles/cereal-complete
+667b78797be8fc886fcabcecb7912b95 cereal/src/cereal-stamp/cereal-build
+02d68f242191cb9b0e088b2ee8e1f40f cereal/src/cereal-stamp/cereal-configure
+b56b65e67e64850089bbfc8e94ee2ff5 cereal/src/cereal-stamp/cereal-download
+d1f87c3e309ef2fe3b1969c163abecf1 cereal/src/cereal-stamp/cereal-install
+3af41223ad5436055e31408363e280ee cereal/src/cereal-stamp/cereal-mkdir
+60d59c75d91e13be70dd6bd88723c4e1 cereal/src/cereal-stamp/cereal-patch
+f343938715fa03d701d00f945bfecb45 cereal/src/cereal-stamp/cereal-update

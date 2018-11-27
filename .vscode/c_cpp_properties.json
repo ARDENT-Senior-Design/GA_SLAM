@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/anhtuanquang1234/Documents/Github/GA_SLAM/devel/include",
+                "/opt/ros/kinetic/include",
+                "/home/anhtuanquang1234/Documents/Github/GA_SLAM/src/grid_map/grid_map_core/include",
+                "/home/anhtuanquang1234/Documents/Github/GA_SLAM/src/grid_map/grid_map_costmap_2d/include",
+                "/home/anhtuanquang1234/Documents/Github/GA_SLAM/src/grid_map/grid_map_cv/include",
+                "/home/anhtuanquang1234/Documents/Github/GA_SLAM/src/grid_map/grid_map_demos/include",
+                "/home/anhtuanquang1234/Documents/Github/GA_SLAM/src/grid_map/grid_map_filters/include",
+                "/home/anhtuanquang1234/Documents/Github/GA_SLAM/src/grid_map/grid_map_loader/include",
+                "/home/anhtuanquang1234/Documents/Github/GA_SLAM/src/grid_map/grid_map_octomap/include",
+                "/home/anhtuanquang1234/Documents/Github/GA_SLAM/src/grid_map/grid_map_pcl/include",
+                "/home/anhtuanquang1234/Documents/Github/GA_SLAM/src/grid_map/grid_map_ros/include",
+                "/home/anhtuanquang1234/Documents/Github/GA_SLAM/src/grid_map/grid_map_rviz_plugin/include",
+                "/home/anhtuanquang1234/Documents/Github/GA_SLAM/src/grid_map/grid_map_sdf/include",
+                "/home/anhtuanquang1234/Documents/Github/GA_SLAM/src/grid_map/grid_map_visualization/include",
+                "/usr/include",
+                "/usr/include/pcl-1.7",
+                "/usr/local/include/eigen3"
+            ],
+            "name": "Linux",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}
