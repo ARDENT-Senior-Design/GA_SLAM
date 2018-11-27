@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/anhtuanquang1234/Documents/Github/GA_SLAM_ARDENT/src/ga_slam_visualization-master/ga_slam_cereal/build/CMakeFiles/cereal"
+		},
+		{
+			"file" : "/home/anhtuanquang1234/Documents/Github/GA_SLAM_ARDENT/src/ga_slam_visualization-master/ga_slam_cereal/build/CMakeFiles/cereal.rule"
+		},
+		{
+			"file" : "/home/anhtuanquang1234/Documents/Github/GA_SLAM_ARDENT/src/ga_slam_visualization-master/ga_slam_cereal/build/CMakeFiles/cereal-complete.rule"
+		},
+		{
+			"file" : "/home/anhtuanquang1234/Documents/Github/GA_SLAM_ARDENT/src/ga_slam_visualization-master/ga_slam_cereal/build/cereal/src/cereal-stamp/cereal-install.rule"
+		},
+		{
+			"file" : "/home/anhtuanquang1234/Documents/Github/GA_SLAM_ARDENT/src/ga_slam_visualization-master/ga_slam_cereal/build/cereal/src/cereal-stamp/cereal-mkdir.rule"
+		},
+		{
+			"file" : "/home/anhtuanquang1234/Documents/Github/GA_SLAM_ARDENT/src/ga_slam_visualization-master/ga_slam_cereal/build/cereal/src/cereal-stamp/cereal-download.rule"
+		},
+		{
+			"file" : "/home/anhtuanquang1234/Documents/Github/GA_SLAM_ARDENT/src/ga_slam_visualization-master/ga_slam_cereal/build/cereal/src/cereal-stamp/cereal-update.rule"
+		},
+		{
+			"file" : "/home/anhtuanquang1234/Documents/Github/GA_SLAM_ARDENT/src/ga_slam_visualization-master/ga_slam_cereal/build/cereal/src/cereal-stamp/cereal-patch.rule"
+		},
+		{
+			"file" : "/home/anhtuanquang1234/Documents/Github/GA_SLAM_ARDENT/src/ga_slam_visualization-master/ga_slam_cereal/build/cereal/src/cereal-stamp/cereal-configure.rule"
+		},
+		{
+			"file" : "/home/anhtuanquang1234/Documents/Github/GA_SLAM_ARDENT/src/ga_slam_visualization-master/ga_slam_cereal/build/cereal/src/cereal-stamp/cereal-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"cereal"
+		],
+		"name" : "cereal"
+	}
+}

@@ -1,0 +1,677 @@
+<?xml version="1.0"?>
+<!-- URDF for ExoTer rover -->
+<!-- Author: Javier Hidalgo-Carrio, javier.hidalgo-carrio@dfki.de DFKI, Robotic Innovation Centre -->
+<!-- Version: 0.1 -->
+<!-- February 2014 -->
+
+<robot name="exoter">
+
+<!-- Link definitions -->
+<!-- Base Link of the Rover, main body of the rover, which looks like a Box -->
+<link name="body_base">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/body_base_vicon_and_gps.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="-0.0405 0.0 0.11" rpy="0 0 0"/> <!-- X translation to make the center at the middle wheels and Z translation for the height in body center (sign are changed because we are moving the body stl wrt the frame)-->
+        <material name="White">
+            <color rgba="1.0 1.0 1.0 1.0"/>
+        </material>
+    </visual>
+</link>
+
+
+<!-- Rear Link definition -->
+<link name="rear_bogie">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/rear_bogie.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 -0.02" rpy="0 0 0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1. 1.0"/>
+        </material>
+    </visual>
+</link>
+
+<!-- Left Link definition -->
+<link name="left_bogie">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/lateral_bogie.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0.0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1. 1.0"/>
+        </material>
+    </visual>
+</link>
+
+<!-- Right Link definition -->
+<link name="right_bogie">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/lateral_bogie.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="3.14 0 0.0"/> <!-- mirror of the stl file -->
+        <material name="White" >
+            <color rgba="1.0 1.0 1. 1.0"/>
+        </material>
+    </visual>
+</link>
+
+
+<!-- FL Hinge definition -->
+<link name="fl_hinge">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/hinge_front_middle.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0.0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1. 1.0"/>
+        </material>
+    </visual>
+</link>
+
+<!-- FR Hinge definition -->
+<link name="fr_hinge">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/hinge_front_middle.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="3.14 0 0.0"/> <!-- mirror of the stl file -->
+        <material name="White" >
+            <color rgba="1.0 1.0 1. 1.0"/>
+        </material>
+    </visual>
+</link>
+
+
+<!-- ML Hinge definition -->
+<link name="ml_hinge">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/hinge_front_middle.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="0 3.14 0.0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1. 1.0"/>
+        </material>
+    </visual>
+</link>
+
+
+<!-- MR Hinge definition -->
+<link name="mr_hinge">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/hinge_front_middle.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="3.14 3.14 0.0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1. 1.0"/>
+        </material>
+    </visual>
+</link>
+
+<!-- Rear Right Hinge definition -->
+<link name="rl_hinge">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/hinge_back_left.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1. 1.0"/>
+        </material>
+    </visual>
+</link>
+
+<!-- Rear Left Hinge definition -->
+<link name="rr_hinge">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/hinge_back_right.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1. 1.0"/>
+        </material>
+    </visual>
+</link>
+
+<!-- Front Left Motor block -->
+<link name="fl_motor">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/motor_block_fl.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0.0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1. 1.0"/>
+        </material>
+    </visual>
+</link>
+
+<!-- Front Right Motor block -->
+<link name="fr_motor">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/motor_block_rl.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0.0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1. 1.0"/>
+        </material>
+    </visual>
+</link>
+
+<!-- Rear Left Motor block -->
+<link name="rl_motor">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/motor_block_rl.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0.0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1. 1.0"/>
+        </material>
+    </visual>
+</link>
+
+<!-- Rear Right Motor block -->
+<link name="rr_motor">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/motor_block_rr.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0.0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1. 1.0"/>
+        </material>
+    </visual>
+</link>
+
+<!-- Middle Left Motor block -->
+<link name="ml_motor">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/motor_middle_left.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0.0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1. 1.0"/>
+        </material>
+    </visual>
+</link>
+
+<!-- Middle Right Motor block -->
+<link name="mr_motor">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/motor_middle_right.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0.0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1. 1.0"/>
+        </material>
+    </visual>
+</link>
+
+
+<!-- Front Left Steer -->
+<link name="fl_fork">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/fork_left.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0.0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1. 1.0"/>
+        </material>
+    </visual>
+</link>
+
+<!-- Front Right Steer -->
+<link name="fr_fork">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/fork_right.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0.0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1. 1.0"/>
+        </material>
+    </visual>
+</link>
+
+<!-- Rear Left Steer -->
+<link name="rl_fork">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/fork_left.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0.0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1. 1.0"/>
+        </material>
+    </visual>
+</link>
+
+<!-- Rear Right Steer -->
+<link name="rr_fork">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/fork_right.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0.0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1.0 1.0"/>
+        </material>
+    </visual>
+</link>
+
+<!-- Front Left Wheel -->
+<link name="fl_wheel">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/wheel.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0.0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1.0 1.0"/>
+        </material>
+    </visual>
+</link>
+
+<!-- Front Right Wheel -->
+<link name="fr_wheel">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/wheel.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="3.14 0 0.0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1.0 1.0"/>
+        </material>
+    </visual>
+</link>
+
+<!-- Middle Left Wheel -->
+<link name="ml_wheel">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/wheel.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0.0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1.0 1.0"/>
+        </material>
+    </visual>
+</link>
+
+<!-- Middle Right Wheel -->
+<link name="mr_wheel">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/wheel.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="3.14 0 0.0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1.0 1.0"/>
+        </material>
+    </visual>
+</link>
+
+<!-- Rear Left Wheel -->
+<link name="rl_wheel">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/wheel.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0.0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1.0 1.0"/>
+        </material>
+    </visual>
+</link>
+
+<!-- Rear Right Wheel -->
+<link name="rr_wheel">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/wheel.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="3.14 0 0.0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1.0 1.0"/>
+        </material>
+    </visual>
+</link>
+
+<!-- Mast Assembly  -->
+<link name="mast_assembly">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/mast_assembly.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0.0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1.0 1.0"/>
+        </material>
+    </visual>
+</link>
+
+<!-- Pan drive  -->
+<link name="pan_drive">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/pan_drive.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0.0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1.0 1.0"/>
+        </material>
+    </visual>
+</link>
+
+<!-- Tilt drive  -->
+<link name="tilt_drive">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/tilt_drive.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0.0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1.0 1.0"/>
+        </material>
+    </visual>
+</link>
+
+<!-- Cameras assembly  -->
+<link name="camera_assembly">
+    <visual>
+        <geometry>
+            <mesh filename="package://ga_slam_visualization/urdf/meshes/exoter/bb2_and_tof_camera.stl" scale = "1 1 1"/>
+        </geometry>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0.0"/>
+        <material name="White" >
+            <color rgba="1.0 1.0 1.0 1.0"/>
+        </material>
+    </visual>
+</link>
+
+
+
+<!-- ====================Joint Descriptions =================================================================================-->
+
+<!-- rear joint that connects base_link and rear_link with a revolute joint -->
+<joint name="rear_passive" type="fixed">
+    <parent link="body_base"/>
+    <child link="rear_bogie"/>
+    <origin xyz="-0.265 0 0" rpy="0.0 0.0 0.00"/> 
+    <axis xyz="1 0 0 " /> <!-- revolute rotation about Y axis -->
+    <limit lower="-1.6" upper="1.6" velocity="6.28" effort="100"/>
+</joint>
+
+<!-- right joint that connects base_link and right_link with a revolute joint -->
+<joint name="right_passive" type="fixed">
+    <parent link="body_base"/>
+    <child link="right_bogie"/>
+    <origin xyz="0.1325 -0.223 0" rpy="0 0.00 0"/> 
+    <axis xyz="0 1 0" /> <!-- revolute rotation about Y axis -->
+    <limit lower="-1.6" upper="1.6" velocity="6.28" effort="100"/>
+</joint>
+
+<!-- left joint that connects base_link and front_link with a revolute joint -->
+<joint name="left_passive" type="fixed">
+    <parent link="body_base"/>
+    <child link="left_bogie"/>
+    <origin xyz="0.1325 0.223 0" rpy="0 0.00 0"/> 
+    <axis xyz="0 1 0" /> <!-- revolute rotation about Y axis -->
+    <limit lower="-1.6" upper="1.6" velocity="6.28" effort="100"/>
+</joint>
+
+<!-- front left joint that connects left_bogie and fl_hinge with a mimic joint -->
+<joint name="fl_mimic" type="fixed">
+    <parent link="left_bogie"/>
+    <child link="fl_hinge"/>
+    <origin xyz="0.1325 0 0" rpy="0 0.0 0"/>
+    <axis xyz="0 1 0" /> <!-- revolute rotation about Y axis -->
+    <mimic joint="left_passive" multiplier="-1" offset="0"/>
+    <limit lower="-1.6" upper="1.6" velocity="6.28" effort="100"/>
+</joint>
+
+<!-- front right joint that connects right_bogie and fr_hinge with a mimic joint -->
+<joint name="fr_mimic" type="fixed">
+    <parent link="right_bogie"/>
+    <child link="fr_hinge"/>
+    <origin xyz="0.1325 0 0" rpy="0 0.0 0"/>
+    <axis xyz="0 1 0" /> <!-- revolute rotation about Y axis -->
+    <mimic joint="right_passive" multiplier="-1" offset="0"/>
+    <limit lower="-1.6" upper="1.6" velocity="6.28" effort="100"/>
+</joint>
+
+<!-- middle left joint that connects left_bogie and ml_hinge with a mimic joint -->
+<joint name="ml_mimic" type="fixed">
+    <parent link="left_bogie"/>
+    <child link="ml_hinge"/>
+    <origin xyz="-0.1325 0 0" rpy="0 0.0 0"/>
+    <axis xyz="0 1 0" /> <!-- revolute rotation about Y axis -->
+    <mimic joint="left_passive" multiplier="-1" offset="0"/>
+    <limit lower="-1.6" upper="1.6" velocity="6.28" effort="100"/>
+</joint>
+
+<!-- middle right joint that connects right_bogie and mr_hinge with a mimic joint -->
+<joint name="mr_mimic" type="fixed">
+    <parent link="right_bogie"/>
+    <child link="mr_hinge"/>
+    <origin xyz="-0.1325 0 0" rpy="0 0.0 0"/>
+    <axis xyz="0 1 0" /> <!-- revolute rotation about Y axis -->
+    <mimic joint="right_passive" multiplier="-1" offset="0"/>
+    <limit lower="-1.6" upper="1.6" velocity="6.28" effort="100"/>
+</joint>
+
+<!-- rear left joint that connects rear_bogie and rl_hinge with a mimic joint -->
+<joint name="rl_mimic" type="fixed">
+    <parent link="rear_bogie"/>
+    <child link="rl_hinge"/>
+    <origin xyz="0.0 0.239 0" rpy="0 0.0 0"/>
+    <axis xyz="1 0 0" /> <!-- revolute rotation about X axis -->
+    <mimic joint="rear_passive" multiplier="-1" offset="0"/>
+    <limit lower="-1.6" upper="1.6" velocity="6.28" effort="100"/>
+</joint>
+
+<!-- rear right joint that connects rear_bogie and rr_hinge with a mimic joint -->
+<joint name="rr_mimic" type="fixed">
+    <parent link="rear_bogie"/>
+    <child link="rr_hinge"/>
+    <origin xyz="0.0 -0.239 0" rpy="0 0.0 0"/>
+    <axis xyz="1 0 0" /> <!-- revolute rotation about X axis -->
+    <mimic joint="rear_passive" multiplier="-1" offset="0"/>
+    <limit lower="-1.6" upper="1.6" velocity="6.28" effort="100"/>
+</joint>
+
+<!-- FL Wheel walking joint with a revolute joint -->
+<joint name="fl_walking" type="fixed">
+    <parent link="fl_hinge"/>
+    <child link="fl_motor"/>
+    <origin xyz="0 0.087 -0.005" rpy="0 0.00 0"/> 
+    <axis xyz="0 1 0" /> <!-- revolute rotation about z axis -->
+    <limit lower="-1.6" upper="1.6" velocity="6.28" effort="100"/>
+</joint>
+
+
+<!-- FR Wheel walking joint with a revolute joint -->
+<joint name="fr_walking" type="fixed">
+    <parent link="fr_hinge"/>
+    <child link="fr_motor"/>
+    <origin xyz="0 -0.087 -0.005" rpy="0 0.00 0"/> 
+    <axis xyz="0 1 0" /> <!-- revolute rotation about z axis -->
+    <limit lower="-1.6" upper="1.6" velocity="6.28" effort="100"/>
+</joint>
+
+<!-- RL Wheel walking joint with a revolute joint -->
+<joint name="rl_walking" type="fixed">
+    <parent link="rl_hinge"/>
+    <child link="rl_motor"/>
+    <origin xyz="0 0.071 -0.005" rpy="0 0.00 0"/> 
+    <axis xyz="0 1 0" /> <!-- revolute rotation about z axis -->
+    <limit lower="-1.6" upper="1.6" velocity="6.28" effort="100"/>
+</joint>
+
+<!-- RR Wheel walking joint with a revolute joint -->
+<joint name="rr_walking" type="fixed">
+    <parent link="rr_hinge"/>
+    <child link="rr_motor"/>
+    <origin xyz="0 -0.071 -0.005" rpy="0 0.00 0"/> 
+    <axis xyz="0 1 0" /> <!-- revolute rotation about z axis -->
+    <limit lower="-1.6" upper="1.6" velocity="6.28" effort="100"/>
+</joint>
+
+<!-- ML Wheel walking joint with a revolute joint -->
+<joint name="ml_walking" type="fixed">
+    <parent link="ml_hinge"/>
+    <child link="ml_motor"/>
+    <origin xyz="0 0.087 -0.005" rpy="0 0.00 0"/> 
+    <axis xyz="0 1 0" /> <!-- revolute rotation about z axis -->
+    <limit lower="-1.6" upper="1.6" velocity="6.28" effort="100"/>
+</joint>
+
+<!-- MR Wheel walking joint with a revolute joint -->
+<joint name="mr_walking" type="fixed">
+    <parent link="mr_hinge"/>
+    <child link="mr_motor"/>
+    <origin xyz="0 -0.087 -0.005" rpy="0 0.00 0"/> 
+    <axis xyz="0 1 0" /> <!-- revolute rotation about z axis -->
+    <limit lower="-1.6" upper="1.6" velocity="6.28" effort="100"/>
+</joint>
+
+<!-- FL Wheel steer joint with a revolute joint -->
+<joint name="fl_steer" type="fixed">
+    <parent link="fl_motor"/>
+    <child link="fl_fork"/>
+    <origin xyz="0 0.0 -0.03" rpy="0 0.00 0"/> 
+    <axis xyz="0 0 1" /> <!-- revolute rotation about z axis -->
+    <limit lower="-1.6" upper="1.6" velocity="6.28" effort="100"/>
+</joint>
+
+<!-- FR Wheel steer joint with a revolute joint -->
+<joint name="fr_steer" type="fixed">
+    <parent link="fr_motor"/>
+    <child link="fr_fork"/>
+    <origin xyz="0 0.0 -0.03" rpy="0 0.00 0"/> 
+    <axis xyz="0 0 1" /> <!-- revolute rotation about z axis -->
+    <limit lower="-1.6" upper="1.6" velocity="6.28" effort="100"/>
+</joint>
+
+<!-- RL Wheel steer joint with a revolute joint -->
+<joint name="rl_steer" type="fixed">
+    <parent link="rl_motor"/>
+    <child link="rl_fork"/>
+    <origin xyz="0 0.0 -0.03" rpy="0 0.00 0"/> 
+    <axis xyz="0 0 1" /> <!-- revolute rotation about z axis -->
+    <limit lower="-1.6" upper="1.6" velocity="6.28" effort="100"/>
+</joint>
+
+<!-- RR Wheel steer joint with a revolute joint -->
+<joint name="rr_steer" type="fixed">
+    <parent link="rr_motor"/>
+    <child link="rr_fork"/>
+    <origin xyz="0 0.0 -0.03" rpy="0 0.00 0"/> 
+    <axis xyz="0 0 1" /> <!-- revolute rotation about z axis -->
+    <limit lower="-1.6" upper="1.6" velocity="6.28" effort="100"/>
+</joint>
+
+<!-- FL Wheel drive joint with a revolute joint -->
+<joint name="fl_drive" type="fixed">
+    <parent link="fl_fork"/>
+    <child link="fl_wheel"/>
+    <origin xyz="0 0.0 -0.0953" rpy="0 0.00 0"/> 
+    <axis xyz="0 1 0" /> <!-- revolute rotation about y axis -->
+    <limit lower="-3.14" upper="3.14" velocity="6.28" effort="100"/>
+</joint>
+
+<!-- FR Wheel drive joint with a revolute joint -->
+<joint name="fr_drive" type="fixed">
+    <parent link="fr_fork"/>
+    <child link="fr_wheel"/>
+    <origin xyz="0 0.0 -0.0953" rpy="0 0.00 0"/> 
+    <axis xyz="0 1 0" /> <!-- revolute rotation about y axis -->
+    <limit lower="-3.14" upper="3.14" velocity="6.28" effort="100"/>
+</joint>
+
+<!-- ML Wheel drive joint with a revolute joint -->
+<joint name="ml_drive" type="fixed">
+    <parent link="ml_motor"/>
+    <child link="ml_wheel"/>
+    <origin xyz="0 0.0 -0.1253" rpy="0 0.00 0"/> 
+    <axis xyz="0 1 0" /> <!-- revolute rotation about y axis -->
+    <limit lower="-3.14" upper="3.14" velocity="6.28" effort="100"/>
+</joint>
+
+<!-- MR Wheel drive joint with a revolute joint -->
+<joint name="mr_drive" type="fixed">
+    <parent link="mr_motor"/>
+    <child link="mr_wheel"/>
+    <origin xyz="0 0.0 -0.1253" rpy="0 0.00 0"/> 
+    <axis xyz="0 1 0" /> <!-- revolute rotation about y axis -->
+    <limit lower="-3.14" upper="3.14" velocity="6.28" effort="100"/>
+</joint>
+
+<!-- RL Wheel drive joint with a revolute joint -->
+<joint name="rl_drive" type="fixed">
+    <parent link="rl_fork"/>
+    <child link="rl_wheel"/>
+    <origin xyz="0 0.0 -0.0953" rpy="0 0.00 0"/> 
+    <axis xyz="0 1 0" /> <!-- revolute rotation about y axis -->
+    <limit lower="-3.14" upper="3.14" velocity="6.28" effort="100"/>
+</joint>
+
+<!-- RR Wheel drive joint with a revolute joint -->
+<joint name="rr_drive" type="fixed">
+    <parent link="rr_fork"/>
+    <child link="rr_wheel"/>
+    <origin xyz="0 0.0 -0.0953" rpy="0 0.00 0"/> 
+    <axis xyz="0 1 0" /> <!-- revolute rotation about y axis -->
+    <limit lower="-3.14" upper="3.14" velocity="6.28" effort="100"/>
+</joint>
+
+<!-- Mast assembly with a fixed joint -->
+<joint name="mast_joint" type="fixed">
+    <parent link="body_base"/>
+    <child link="mast_assembly"/>
+    <origin xyz="0.076 0.0 0.0" rpy="0 0.0 0"/> 
+    <limit lower="-1.6" upper="1.6" velocity="6.28" effort="100"/>
+</joint>
+
+<!--Pan assembly with a fixed joint -->
+<joint name="mast_top_joint" type="fixed">
+    <parent link="mast_assembly"/>
+    <child link="pan_drive"/>
+    <origin xyz="0.0 0.0 0.64" rpy="0 0.0 0"/> 
+    <limit lower="-1.6" upper="1.6" velocity="6.28" effort="100"/>
+</joint>
+
+<!-- Pan joint with a revolute joint -->
+<joint name="pan_joint" type="fixed">
+    <parent link="pan_drive"/>
+    <child link="tilt_drive"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0.0 0"/> 
+    <axis xyz="0 0 1" /> <!-- revolute rotation about z axis -->
+    <limit lower="-1.6" upper="1.6" velocity="6.28" effort="100"/>
+</joint>
+
+<!-- Tilt joint with a revolute joint -->
+<joint name="tilt_joint" type="fixed">
+    <parent link="tilt_drive"/>
+    <child link="camera_assembly"/>
+    <origin xyz="0.0 0.0 0.03" rpy="0 0.0 0"/> 
+    <axis xyz="0 1 0" /> <!-- revolute rotation about y axis -->
+    <limit lower="-1.6" upper="1.6" velocity="6.28" effort="100"/>
+</joint>
+
+
+</robot>
+

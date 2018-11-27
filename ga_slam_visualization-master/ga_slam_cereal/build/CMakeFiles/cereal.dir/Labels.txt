@@ -1,0 +1,13 @@
+# Target labels
+ cereal
+# Source files and their labels
+/home/anhtuanquang1234/Documents/Github/GA_SLAM_ARDENT/src/ga_slam_visualization-master/ga_slam_cereal/build/CMakeFiles/cereal
+/home/anhtuanquang1234/Documents/Github/GA_SLAM_ARDENT/src/ga_slam_visualization-master/ga_slam_cereal/build/CMakeFiles/cereal.rule
+/home/anhtuanquang1234/Documents/Github/GA_SLAM_ARDENT/src/ga_slam_visualization-master/ga_slam_cereal/build/CMakeFiles/cereal-complete.rule
+/home/anhtuanquang1234/Documents/Github/GA_SLAM_ARDENT/src/ga_slam_visualization-master/ga_slam_cereal/build/cereal/src/cereal-stamp/cereal-install.rule
+/home/anhtuanquang1234/Documents/Github/GA_SLAM_ARDENT/src/ga_slam_visualization-master/ga_slam_cereal/build/cereal/src/cereal-stamp/cereal-mkdir.rule
+/home/anhtuanquang1234/Documents/Github/GA_SLAM_ARDENT/src/ga_slam_visualization-master/ga_slam_cereal/build/cereal/src/cereal-stamp/cereal-download.rule
+/home/anhtuanquang1234/Documents/Github/GA_SLAM_ARDENT/src/ga_slam_visualization-master/ga_slam_cereal/build/cereal/src/cereal-stamp/cereal-update.rule
+/home/anhtuanquang1234/Documents/Github/GA_SLAM_ARDENT/src/ga_slam_visualization-master/ga_slam_cereal/build/cereal/src/cereal-stamp/cereal-patch.rule
+/home/anhtuanquang1234/Documents/Github/GA_SLAM_ARDENT/src/ga_slam_visualization-master/ga_slam_cereal/build/cereal/src/cereal-stamp/cereal-configure.rule
+/home/anhtuanquang1234/Documents/Github/GA_SLAM_ARDENT/src/ga_slam_visualization-master/ga_slam_cereal/build/cereal/src/cereal-stamp/cereal-build.rule
